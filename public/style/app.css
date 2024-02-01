@@ -58,7 +58,7 @@ nav .navLeft {
   padding-left: 10px;
   align-items: center;
 }
-nav .navLeft .iconHolder {
+nav .navLeft a {
   height: 80%;
   width: 70%;
   background-color: #004052;
@@ -66,9 +66,18 @@ nav .navLeft .iconHolder {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  transition: 0.25s ease;
 }
-nav .navLeft .iconHolder .icon {
+nav .navLeft a .icon {
   height: 35px;
+  transition: 0.25s ease;
+}
+nav .navLeft a:hover {
+  background-color: #002029;
+  cursor: pointer;
+}
+nav .navLeft a:hover .icon {
+  height: 45px;
 }
 nav .navMiddle {
   width: 45%;
@@ -152,21 +161,6 @@ nav .navRight ul li .languages {
 }
 nav .navRight ul li .languages:hover > li {
   cursor: pointer;
-}
-nav .navRight ul li .languages > li::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #004052;
-  transform-origin: bottom left;
-  transition: transform 0.25s ease-out;
-}
-nav .navRight ul li .languages > li:hover::after {
-  transform: scaleX(1);
 }
 nav .navRight ul li i {
   color: #004052;
@@ -411,7 +405,7 @@ footer .socials i:hover {
 .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekTextBox {
   width: 40%;
   height: 100%;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
   color: #004052;
   text-shadow: #72BBCE 2px 2px;
@@ -420,7 +414,7 @@ footer .socials i:hover {
 }
 .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekTextBox span {
   text-decoration: underline;
-  font-size: 30px;
+  font-size: 25px;
 }
 .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekTextBox span:hover {
   cursor: pointer;
@@ -727,5 +721,67 @@ footer .socials i:hover {
     width: 300px;
   }
 }
+/* MAIN */
+.mainFormations {
+  display: flex;
+  height: 200dvh;
+  flex-direction: column;
+  align-items: center;
+}
+.mainFormations .formationsBanner {
+  margin-top: 100px;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.mainFormations .formationsBanner .formationsBannerTagline {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 100px;
+  color: #004052;
+  text-shadow: #72BBCE 5px 5px;
+  text-align: left;
+  font-weight: bold;
+}
+.mainFormations .formationsBanner .formationsBannerImage {
+  background-image: url("./../assets/image/formationsBanner.jpeg");
+  background-size: cover;
+  width: 50%;
+  height: 80%;
+  border-radius: 10px;
+  border: 4px solid #004052;
+  box-shadow: #72BBCE 15px 15px;
+}
+.mainFormations .nosFormations {
+  display: flex;
+  flex-direction: column;
+}
+.mainFormations .nosFormations .nosFormationsFilter {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.mainFormations .nosFormations .nosFormationsFilter button {
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid #004052;
+  box-shadow: #72BBCE 5px 5px;
+  background-color: #A7D5E1;
+  font-weight: bold;
+  color: #004052;
+  font-size: 17px;
+}
+.mainFormations .nosFormations .nosFormationsFilter button:hover {
+  cursor: pointer;
+  color: #A7D5E1;
+  background-color: #004052;
+}
+
+/* RESPONSIVE */
 
 /*# sourceMappingURL=app.css.map */
