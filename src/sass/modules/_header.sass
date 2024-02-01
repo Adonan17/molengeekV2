@@ -1,14 +1,211 @@
 /* HEADER */
+nav
+    height: 100px
+    background-color: #A7D5E1
+    margin-top: 35px
+    width: 100%
+    border-radius: 10px
+    transform: scale(0.70)
+    transition: transform 0.5s ease
+    display: flex
+    z-index: 999
+    border: 4px solid #004052
+    box-shadow: #004052 5px 5px
+    .navLeft
+        width: 15%
+        display: flex
+        justify-content: left
+        padding-left: 10px
+        align-items: center
+        .iconHolder
+            height: 80%
+            width: 70%
+            background-color: #004052
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 10px
+            .icon
+                height: 35px
+    .navMiddle
+        width: 65%
+        display: flex
+        align-items: center
+        ul
+            width: 100%
+            display: flex
+            justify-content: space-between
+            list-style: none
+            padding: 0
+            li
+                font-weight: bold
+                text-shadow: #72BBCE 3px 3px
+                transition: 0.2s
+                position: relative
+                width: fit-content
+                display: inline-block
+                font-size: 23px
+                a
+                    text-decoration: none
+                    color: #004052
+            li:hover
+                cursor: pointer
+            li::after
+                content: ''
+                position: absolute
+                width: 100%
+                transform: scaleX(0)
+                height: 2px
+                bottom: -2px
+                left: 0
+                background-color: #004052
+                transform-origin: bottom right
+                transition: transform 0.25s ease-out
+            li:hover::after
+                transform: scaleX(1)
+    .navRight
+        width: 20%
+        display: flex
+        justify-content: center
+        gap: 50px
+        align-items: center
+        ul
+            display: flex
+            width: 100%
+            justify-content: center
+            gap: 50px
+            padding: 0
+            li
+                font-size: 23px
+                list-style: none
+                position: relative
+                .languages
+                    position: absolute
+                    z-index: 999
+                    background-color: #A7D5E1
+                    box-shadow:  #004052 5px 5px
+                    width: 125px
+                    height: 70px
+                    gap: 20px
+                    transform: scaleY(0)
+                    flex-direction: column
+                    border-radius: 10px
+                    border: solid 2px #004052
+                    padding: 10px
+                    font-weight: bold
+                    color: #004052
+                    transition: 0.2s
+                .languages:hover > li
+                    cursor: pointer
+                i
+                    color: #004052
+                .fa-sun
+                    color: #A7D5E1
+                    display: none
+                .fa-bars
+                    display: none
+                i:hover
+                    cursor: pointer
+            .languageIcon:hover .languages
+                transform: scaleY(1)
+                transition: transform 0.25s ease
+nav.sticky
+    margin: 0
+    transform: scale(1)
+    transition: 0.3s ease
+    border-radius: 0
+    position: fixed
+    box-shadow: #004052 5px 0px
+    .navMiddle
+        ul
+            li
+                font-size: 20px
+    .navRight
+        ul
+            li
+                font-size: 20px
+
+.burger-menu
+    width: 100dvw
+    height: 100dvh
+    z-index: 1000
+    background-color: #A7D5E1
+    transform: scaleY(0)
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    transition: transform 0.25s ease
+    top: 0
+    .fa-x
+        position: absolute
+        top: 30px
+        right: 40px
+        font-size: 25px
+        color: #004052
+    ul
+        display: flex
+        flex-direction: column
+        gap: 50px
+        padding: 0
+        align-items: center
+        li
+            list-style: none
+            a
+                font-size: 20px
+                font-weight: bold
+                color: #004052
+                text-decoration: none
 
 
 /* RESPONSIVE */
 @media (max-width: 576px)
+    nav
+        justify-content: space-between
+        .navLeft 
+            width: 50%
+            .iconHolder
+                width: 55%
+        .navMiddle
+            display: none
+        .navRight
+            width: 40%
+            ul
+                align-items: center
+                li
+                    .fa-moon
+                        display: none
+                    .fa-language
+                        display: none
+                    .fa-bars
+                        display: flex
+                        font-size: 40px
 
 
 @media (min-width: 577px) and (max-width: 768px)
-
+    nav
+        justify-content: space-between
+        .navLeft 
+            width: 50%
+            .iconHolder
+                width: 30%
+        .navMiddle
+            display: none
+        .navRight
+            width: 25%
+            ul
+                align-items: center
+                li
+                    .fa-moon
+                        display: none
+                    .fa-language
+                        display: none
+                    .fa-bars
+                        display: flex
+                        font-size: 40px
 
 @media (min-width: 769px) and (max-width: 1024px)
-
+    .icon
+        height: 30px
 
 @media (min-width: 1025px)
