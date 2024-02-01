@@ -775,6 +775,7 @@ footer .socials i:hover {
   font-weight: bold;
   color: #004052;
   font-size: 17px;
+  transition: 0.2s ease;
 }
 .mainFormations .nosFormations .nosFormationsFilter button:hover {
   cursor: pointer;
