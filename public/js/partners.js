@@ -3,11 +3,10 @@ import data from '../json/molengeek.json' assert { type: "json" };
 export function partners() {
     let i = 0;
     let images = [];
-    let time = 3000;
+    let time = 1500;
 
     Object.values(data.partenaires).forEach(element => {
         images.push(element.logo);
-        console.log(images);
     });
 
     function changeImg() {
@@ -20,6 +19,5 @@ export function partners() {
         }
         setTimeout(changeImg, time);
     };
-
-    window.onload = changeImg;
+    window.onload = changeImg()
 }

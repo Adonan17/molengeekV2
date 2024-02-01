@@ -32,8 +32,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #DCEEF3;
-  height: 200vh;
   font-family: sans-serif;
+  height: max-content;
 }
 
 /* HEADER */
@@ -46,6 +46,7 @@ nav {
   transform: scale(0.7);
   transition: transform 0.5s ease;
   display: flex;
+  justify-content: space-between;
   z-index: 999;
   border: 4px solid #004052;
   box-shadow: #004052 5px 5px;
@@ -70,7 +71,7 @@ nav .navLeft .iconHolder .icon {
   height: 35px;
 }
 nav .navMiddle {
-  width: 65%;
+  width: 45%;
   display: flex;
   align-items: center;
 }
@@ -147,9 +148,25 @@ nav .navRight ul li .languages {
   font-weight: bold;
   color: #004052;
   transition: 0.2s;
+  text-shadow: #72BBCE 3px 3px;
 }
 nav .navRight ul li .languages:hover > li {
   cursor: pointer;
+}
+nav .navRight ul li .languages > li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #004052;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+nav .navRight ul li .languages > li:hover::after {
+  transform: scaleX(1);
 }
 nav .navRight ul li i {
   color: #004052;
@@ -175,7 +192,8 @@ nav.sticky {
   transition: 0.3s ease;
   border-radius: 0;
   position: fixed;
-  box-shadow: #004052 5px 0px;
+  border: 1px solid #004052;
+  box-shadow: #72BBCE 5px 0px;
 }
 nav.sticky .navMiddle ul li {
   font-size: 20px;
@@ -290,12 +308,49 @@ nav.sticky .navRight ul li {
 /* MAIN */
 /* RESPONSIVE */
 /* FOOTER */
+footer {
+  position: relative;
+  bottom: 0;
+  margin-top: 400px;
+  height: 30dvh;
+  width: 100%;
+  background-color: #A7D5E1;
+  border: solid #004052;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .socials {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+footer .socials i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #004052;
+  text-shadow: #72BBCE 5px 5px;
+}
+footer .socials i:hover {
+  cursor: pointer;
+  color: #72BBCE;
+  text-shadow: #004052 5px 5px;
+  transform: scale(1.5);
+  transition: transform 0.25s ease;
+}
+
 /* RESPONSIVE */
 /* MAIN */
 .mainHome {
-  position: absolute;
+  position: relative;
   top: 200px;
-  right: 10dvw;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .mainHome .banner {
   height: 65dvh;
@@ -407,7 +462,270 @@ nav.sticky .navRight ul li {
   background-position: center;
   background-color: #A7D5E1;
 }
+.mainHome .contact {
+  margin-top: 100px;
+  display: flex;
+  width: 80%;
+  padding-top: 40px;
+  height: 580px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #A7D5E1;
+  border-radius: 10px;
+  border: 4px solid #004052;
+  box-shadow: #72BBCE 15px 15px;
+}
+.mainHome .contact .contactTitle {
+  font-size: 60px;
+  font-weight: bold;
+  color: #004052;
+  text-shadow: #72BBCE 3px 3px;
+}
+.mainHome .contact .contactInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.mainHome .contact .contactInfo .contactMap {
+  width: 400px;
+  height: 400px;
+  border: 4px solid #004052;
+  box-shadow: #72BBCE 15px 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mainHome .contact .contactInfo .contactMap iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.mainHome .contact .contactInfo .contactInformation {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: left;
+}
+.mainHome .contact .contactInfo .contactInformation ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainHome .contact .contactInfo .contactInformation ul li {
+  font-size: 30px;
+  font-weight: bold;
+  color: #004052;
+  text-shadow: #72BBCE 3px 3px;
+}
+.mainHome .newsLetter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100px;
+  margin-top: 100px;
+}
+.mainHome .newsLetter input {
+  height: 40px;
+  width: 400px;
+  border: 2px solid #004052;
+  box-shadow: #72BBCE 7px 7px;
+  border-radius: 10px;
+  background-color: #A7D5E1;
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #004052;
+  text-shadow: #72BBCE 3px 3px;
+}
+.mainHome .newsLetter input:focus {
+  outline: 0;
+}
+.mainHome .newsLetter button {
+  height: 46px;
+  width: 46px;
+  border: 2px solid #004052;
+  box-shadow: #72BBCE 7px 7px;
+  border-radius: 10px;
+  background-color: #A7D5E1;
+  color: #004052;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+.mainHome .newsLetter button:hover {
+  color: #A7D5E1;
+  background-color: #004052;
+  cursor: pointer;
+}
 
 /* RESPONSIVE */
+@media (max-width: 576px) {
+  .mainHome {
+    top: 150px;
+    right: 0dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100dvw;
+  }
+  .mainHome .banner {
+    width: 80%;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+    height: 70dvh;
+    flex-direction: column;
+  }
+  .mainHome .banner .bannerTagline {
+    justify-content: center;
+    font-size: 30px;
+  }
+  .mainHome .banner .bannerImage {
+    height: 50vh;
+  }
+  .mainHome .whatIsMolengeek {
+    height: 130dvh;
+    margin-top: 40px;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekTitle {
+    font-size: 30px;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekImage {
+    width: 80%;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekTextBox {
+    font-size: 15px;
+    line-height: 20px;
+    width: 80%;
+  }
+  .mainHome .partners {
+    width: 80dvw;
+  }
+  .mainHome .partners .partnersTitle {
+    font-size: 30px;
+  }
+  .mainHome .partners .partnersCarousel {
+    width: 80%;
+  }
+  .mainHome .contact {
+    padding-top: 40px;
+    height: 115dvh;
+    width: 80dvw;
+  }
+  .mainHome .contact .contactTitle {
+    font-size: 30px;
+  }
+  .mainHome .contact .contactInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainHome .contact .contactInfo .contactInformation {
+    align-items: center;
+    height: 150px;
+    gap: 10px;
+    width: 80%;
+    text-align: center;
+  }
+  .mainHome .contact .contactInfo .contactInformation ul li {
+    font-size: 20px;
+  }
+  .mainHome .contact .contactInfo .contactMap {
+    width: 80%;
+  }
+  .mainHome .newsLetter input {
+    width: 200px;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .mainHome {
+    top: 150px;
+    right: 0dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100dvw;
+  }
+  .mainHome .banner {
+    width: 100%;
+    margin: 0;
+    height: 30dvh;
+    gap: 20px;
+    align-items: center;
+    height: 70dvh;
+    flex-direction: column;
+  }
+  .mainHome .banner .bannerTagline {
+    justify-content: center;
+    font-size: 30px;
+    width: 80%;
+    height: 20%;
+  }
+  .mainHome .banner .bannerImage {
+    height: 80%;
+  }
+  .mainHome .whatIsMolengeek {
+    height: 120dvh;
+    gap: 10px;
+    margin-top: 40px;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekTitle {
+    font-size: 30px;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText {
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekImage {
+    width: 80%;
+    height: 100%;
+  }
+  .mainHome .whatIsMolengeek .whatIsMolengeekText .whatIsMolengeekTextBox {
+    font-size: 15px;
+    line-height: 20px;
+    width: 80%;
+    height: 30%;
+  }
+  .mainHome .partners .partnersCarousel {
+    width: 80%;
+  }
+  .mainHome .contact {
+    padding-top: 40px;
+    height: 115dvh;
+    width: 80dvw;
+  }
+  .mainHome .contact .contactTitle {
+    font-size: 30px;
+  }
+  .mainHome .contact .contactInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mainHome .contact .contactInfo .contactInformation {
+    align-items: center;
+    height: 150px;
+    gap: 10px;
+    width: 80%;
+    text-align: center;
+  }
+  .mainHome .contact .contactInfo .contactInformation ul li {
+    font-size: 20px;
+  }
+  .mainHome .contact .contactInfo .contactMap {
+    width: 80%;
+  }
+  input {
+    width: 300px;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
